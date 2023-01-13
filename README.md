@@ -1,8 +1,8 @@
 # Expense-Tracker
 
--Description:
--This is an Expense Tracker Application  in Asp.Net Core MVC 6.
--This is a complete Asp.Net MVC 6 Core application to manage all the data Regarding All the Expenses.
+- Description:
+- This is an Expense Tracker Application  in Asp.Net Core MVC 6.
+- This is a complete Asp.Net MVC 6 Core application to manage all the data Regarding All the Expenses.
 
 
 ----------------------------------------------------------------------------------------------------
