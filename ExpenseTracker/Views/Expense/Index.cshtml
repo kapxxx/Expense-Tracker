@@ -1,0 +1,56 @@
+﻿
+@* Define Model*@
+@model IEnumerable<Expense>
+
+@* Define viewData *@
+@{
+	ViewData["Title"] = "List Of Expenses";
+}
+@* Write Code*@
+
+<div class="container mt-5 table-box3">
+	<div style="display :flex; justify-content: space-between">
+		<h4>Expense List</h4>
+		<h4>Your Total Expense : @Model.Sum(i => i.E_Amount)</h4>
+		<a asp-controller="Expense" asp-action="Create" class="btn btn-sm btn-success float-right ">Add Expense</a>
+	</div>
+	<table class="table table-hover my-3">
+		<thead class="bg-primary text-white">
+				<tr>
+					<th>@Html.DisplayNameFor(Model => Model.E_Title)</th>
+					<th>@Html.DisplayNameFor(Model => Model.E_Description)</th>
+					<th>@Html.DisplayNameFor(Model => Model.E_Date)</th>
+					<th>@Html.DisplayNameFor(Model => Model.E_Amount)</th>
+					<th>@Html.DisplayNameFor(Model => Model.Category.C_Name)</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var item in Model)
+				{
+					<tr>
+						<td class="align-middle">
+							@Html.DisplayFor(modelItem => item.E_Title)
+						</td>
+						<td class="align-middle">
+							@Html.DisplayFor(modelItem => item.E_Description)
+						</td>
+						<td class="align-middle">
+							@Html.DisplayFor(modelItem => item.E_Date)
+						</td>
+						<td class="align-middle">
+							@Html.DisplayFor(modelItem => item.E_Amount)
+						</td>
+						<td class="align-middle">
+							@Html.DisplayFor(modelItem => item.Category.C_Name)
+						</td>
+						<td class="align-middle">
+						<a asp-action="Edit" asp-route-id="@item.E_Id" class="btn btn-outline-primary"><i class="bi bi-pencil"></i> Edit</a> |
+						<a asp-action="Delete" asp-route-id="@item.E_Id" class="btn btn-outline-danger"><i class="bi bi-trash3"></i> Delete</a>
+						</td>
+					</tr>
+				}
+			</tbody>
+			
+		</table>
+	</div>

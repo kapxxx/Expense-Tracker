@@ -1,0 +1,48 @@
+﻿@* Define Model*@
+@model IEnumerable<TotalExpenseLimit>
+
+@* Define viewData *@
+@{
+	ViewData["Title"] = "List Of Category";
+}
+@* Write Code*@
+<h4 class="text-center my-5"> Total Expense limit </h4>
+
+
+<div class="row">
+
+	<div class="col-md-8 offset-md-2">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>@Html.DisplayNameFor(Model => Model.Total_ExpenseLimit_Id)</th>
+					<th>@Html.DisplayNameFor(Model => Model.Total_ExpenseLimit)</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var item in Model)
+				{
+					<tr>
+						<td class="align-middle">
+							@Html.DisplayFor(modelItem => item.Total_ExpenseLimit_Id)
+						</td>
+						<td class="align-middle">
+							@Html.DisplayFor(modelItem => item.Total_ExpenseLimit)
+						</td>
+						<td class="align-middle">
+							<a asp-action="Edit" asp-route-id="@item.Total_ExpenseLimit_Id" class="btn btn-outline-primary">Edit</a> |
+							<a asp-action="Delete" asp-route-id="@item.Total_ExpenseLimit_Id" class="btn btn-outline-danger">Delete</a>
+							@*Html.ActionLink(item.C_Name, "GetExpenseBycategoryId", "Expense", new{ Categoryid= item.C_Id },null)*@
+						</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+</div>
+
+
+<div class="text-white text-center ">
+	@*<a asp-controller="TotalExpenseLimit" asp-action="Create" class="btn btn-success ">Add total Expense</a>*@
+</div>
