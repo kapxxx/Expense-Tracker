@@ -32,3 +32,10 @@
 
 - visual studio 2022 
 - ASP.Net Core MVC 6
+
+--------------------------------------------------------------------------------------------------------
+# API :-
+
+-for apis got to ExpenseTracker folder => Controllers folder => api folder
+![apis](https://user-images.githubusercontent.com/88702677/212630338-724ea277-788a-43c3-a17c-d57800e7a06f.png)
+
